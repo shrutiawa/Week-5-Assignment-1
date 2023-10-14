@@ -1,0 +1,47 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet")
+        title PUG Template
+    body 
+        div(class="container mb-3")
+            h1(style="text-align:center;") #{company}
+            div(class="input-group")
+                form(action="#",method="post")
+                    label(class="form-label" for="heroo1") Avengers Title : 
+                
+                    input(class="form-control  form-control-lg" required type="text" id="heroo1" name="valtechtitle")
+                
+                    label(class="form-label" for="heroo2") Avengers Firstname :
+                    input(class="form-control  form-control-lg" required type="text" id="heroo2" name="valtechfirst")
+                
+                    label(class="form-label" for="heroo3") Avengers Lastname : 
+                    input(class="form-control  form-control-lg" required type="text" id="heroo3" name="valtechlast")
+                
+                    label(class="form-label" for="heroo4") Power :
+                    input(class="form-control  form-control-lg" required type="text" id="heroo4" name="valtechpower")
+                
+                    label(class="form-label" for="heroo5") City : 
+                    input(class="form-control  form-control-lg" required type="text" id="heroo5" name="valtechcity")
+                    br
+                    button(class="btn btn-primary" type="submit") Submit
+        
+            table(class="table  table-bordered")
+                thead
+                    tr
+                        th Title
+                        th Firstname
+                        th Lastname
+                        th Power
+                        th City
+        
+                tbody
+                    each elem in avengers
+                        tr
+                            td #{elem.title}
+                            td #{elem.firstname}
+                            td #{elem.lastname}
+                            td #{elem.power}
+                            td #{elem.city}
